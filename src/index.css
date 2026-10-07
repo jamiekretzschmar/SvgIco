@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #eef2f7;
+    --bg-surface: #eef2f7;
+    --bg-card: #f3f6fa;
+    --bg-inset: #e5ebf3;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(255, 255, 255, 0.7);
+
+    /* Neomorphic shadows light mode */
+    --neo-shadow-raised: 8px 8px 18px rgba(166, 178, 198, 0.55), -8px -8px 18px rgba(255, 255, 255, 0.95);
+    --neo-shadow-raised-sm: 4px 4px 10px rgba(166, 178, 198, 0.45), -4px -4px 10px rgba(255, 255, 255, 0.9);
+    --neo-shadow-raised-lg: 12px 12px 28px rgba(166, 178, 198, 0.6), -12px -12px 28px rgba(255, 255, 255, 1);
+    
+    --neo-shadow-pressed: inset 4px 4px 8px rgba(166, 178, 198, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+    --neo-shadow-pressed-sm: inset 2px 2px 5px rgba(166, 178, 198, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+    --neo-shadow-pressed-deep: inset 6px 6px 12px rgba(166, 178, 198, 0.7), inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+
+    --primary-blue: #2563eb;
+    --primary-indigo: #4f46e5;
+    --primary-purple: #7c3aed;
+    --primary-coral: #f43f5e;
+    --primary-cyan: #06b6d4;
+    --primary-amber: #f59e0b;
+    --primary-emerald: #10b981;
+  }
+
+  .dark {
+    --bg-main: #13171f;
+    --bg-surface: #181d27;
+    --bg-card: #1c222e;
+    --bg-inset: #11141b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+
+    /* Neomorphic shadows dark mode */
+    --neo-shadow-raised: 8px 8px 20px rgba(7, 9, 13, 0.8), -8px -8px 20px rgba(35, 43, 58, 0.4);
+    --neo-shadow-raised-sm: 4px 4px 10px rgba(7, 9, 13, 0.75), -4px -4px 10px rgba(35, 43, 58, 0.35);
+    --neo-shadow-raised-lg: 12px 12px 30px rgba(7, 9, 13, 0.9), -12px -12px 30px rgba(35, 43, 58, 0.45);
+    
+    --neo-shadow-pressed: inset 4px 4px 9px rgba(5, 7, 10, 0.9), inset -4px -4px 9px rgba(38, 46, 62, 0.35);
+    --neo-shadow-pressed-sm: inset 2px 2px 5px rgba(5, 7, 10, 0.85), inset -2px -2px 5px rgba(38, 46, 62, 0.3);
+    --neo-shadow-pressed-deep: inset 6px 6px 14px rgba(5, 7, 10, 0.95), inset -6px -6px 14px rgba(38, 46, 62, 0.4);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Pressed Neomorphic Custom Classes */
+.neo-card {
+  background-color: var(--bg-surface);
+  box-shadow: var(--neo-shadow-raised);
+  border: 1px solid var(--border-subtle);
+}
+
+.neo-card-sm {
+  background-color: var(--bg-surface);
+  box-shadow: var(--neo-shadow-raised-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.neo-card-lg {
+  background-color: var(--bg-surface);
+  box-shadow: var(--neo-shadow-raised-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+.neo-pressed {
+  background-color: var(--bg-inset);
+  box-shadow: var(--neo-shadow-pressed);
+  border: 1px solid var(--border-subtle);
+}
+
+.neo-pressed-sm {
+  background-color: var(--bg-inset);
+  box-shadow: var(--neo-shadow-pressed-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.neo-pressed-deep {
+  background-color: var(--bg-inset);
+  box-shadow: var(--neo-shadow-pressed-deep);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Interactive neomorphic buttons */
+.neo-btn {
+  background-color: var(--bg-surface);
+  box-shadow: var(--neo-shadow-raised-sm);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.neo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--neo-shadow-raised);
+}
+
+.neo-btn:active, .neo-btn.is-active {
+  transform: translateY(1px);
+  background-color: var(--bg-inset);
+  box-shadow: var(--neo-shadow-pressed);
+}
+
+/* Vibrant Primary Action Buttons with Inset/Outset Depth */
+.neo-btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.15s ease;
+}
+
+.neo-btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.55), inset 1px 1px 3px rgba(255, 255, 255, 0.45);
+}
+
+.neo-btn-primary:active, .neo-btn-primary.is-active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 8px rgba(15, 23, 42, 0.6), inset -1px -1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.neo-btn-accent {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neo-btn-accent:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.55);
+}
+
+.neo-btn-accent:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 8px rgba(15, 23, 42, 0.6);
+}
+
+.neo-btn-coral {
+  background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neo-btn-coral:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(244, 63, 94, 0.55);
+}
+
+.neo-btn-coral:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 8px rgba(15, 23, 42, 0.6);
+}
+
+/* Inset inputs */
+.neo-input {
+  background-color: var(--bg-inset);
+  box-shadow: var(--neo-shadow-pressed-sm);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: var(--neo-shadow-pressed), 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
+}

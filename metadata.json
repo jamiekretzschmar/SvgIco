@@ -1,0 +1,6 @@
+{
+  "name": "GlyphForge - Neomorphic SVG & TTF Icon Set Studio",
+  "description": "Professional web development icon set studio. Create, edit, and organize SVGs and TrueType Fonts (TTF) with batch export, responsive screen previews, directory importing, and pressed neomorphic styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
